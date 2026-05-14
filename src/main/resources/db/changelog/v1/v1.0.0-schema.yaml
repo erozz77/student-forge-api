@@ -1,0 +1,406 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1-create-users-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(150)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: password_hash
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+  - changeSet:
+      id: 1-create-student-profiles-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: student_profiles
+            columns:
+              - column:
+                  name: user_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_student_profile_user
+                    references: users(id)
+              - column:
+                  name: university
+                  type: VARCHAR(255)
+              - column:
+                  name: major
+                  type: VARCHAR(150)
+              - column:
+                  name: graduation_year
+                  type: INT
+              - column:
+                  name: avatar_url
+                  type: VARCHAR(500)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+  - changeSet:
+      id: 1-create-academic-periods-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: academic_periods
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start_date
+                  type: DATE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end_date
+                  type: DATE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+  - changeSet:
+      id: 1-create-groups-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: groups
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(150)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: TEXT
+              - column:
+                  name: period_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_group_period
+                    references: academic_periods(id)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+  - changeSet:
+      id: 1-create-subjects-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: subjects
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: teacher_name
+                  type: VARCHAR(150)
+              - column:
+                  name: weight_coefficient
+                  type: DECIMAL(3,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_hours
+                  type: INT
+              - column:
+                  name: group_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_subject_group
+                    references: groups(id)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+  - changeSet:
+      id: 1-create-assignments-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: assignments
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: VARCHAR(300)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: TEXT
+              - column:
+                  name: due_date
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: weight
+                  type: DECIMAL(3,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: subject_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_assignment_subject
+                    references: subjects(id)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+  - changeSet:
+      id: 1-create-grades-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: grades
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: score
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: graded_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: comment
+                  type: VARCHAR(500)
+              - column:
+                  name: user_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_grade_user
+                    references: users(id)
+              - column:
+                  name: assignment_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_grade_assignment
+                    references: assignments(id)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+        - addUniqueConstraint:
+            tableName: grades
+            columnNames: user_id, assignment_id
+            constraintName: uk_user_assignment
+
+  - changeSet:
+      id: 1-create-enrollments-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: enrollments
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_enrollment_user
+                    references: users(id)
+              - column:
+                  name: group_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_enrollment_group
+                    references: groups(id)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  defaultValueComputed: CURRENT_TIMESTAMP
+        - addUniqueConstraint:
+            tableName: enrollments
+            columnNames: user_id, group_id
+            constraintName: uk_user_group
+
+  - changeSet:
+      id: 1-add-indexes
+      author: forge_dev
+      changes:
+        - createIndex:
+            tableName: users
+            indexName: idx_user_email
+            columns:
+              - column:
+                  name: email
+        - createIndex:
+            tableName: academic_periods
+            indexName: idx_period_active
+            columns:
+              - column:
+                  name: active
+        - createIndex:
+            tableName: groups
+            indexName: idx_group_period
+            columns:
+              - column:
+                  name: period_id
+        - createIndex:
+            tableName: subjects
+            indexName: idx_subject_group
+            columns:
+              - column:
+                  name: group_id
+        - createIndex:
+            tableName: assignments
+            indexName: idx_assignment_subject
+            columns:
+              - column:
+                  name: subject_id
+        - createIndex:
+            tableName: assignments
+            indexName: idx_assignment_due_date
+            columns:
+              - column:
+                  name: due_date
+        - createIndex:
+            tableName: assignments
+            indexName: idx_assignment_status
+            columns:
+              - column:
+                  name: status

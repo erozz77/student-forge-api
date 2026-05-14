@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Forge</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/crud.css">
+</head>
+<body>
+<nav class="navbar">
+    <a href="/" class="navbar-brand">StudyForge</a>
+    <ul class="navbar-nav">
+        <li><span class="nav-link" id="navUserName">...</span></li>
+        <li><button onclick="logout()" class="btn-logout">Выйти</button></li>
+    </ul>
+</nav>
+<div class="container fade-in">
+    <div class="profile-header">
+        <label class="btn btn-secondary btn-sm" style="cursor:pointer;padding:0;border:none;background:transparent;">
+            <div class="profile-avatar" id="avatarLetter">?</div>
+            <input type="file" id="hiddenAvatarFile" accept="image/*" style="display:none;" onchange="uploadAvatar()">
+        </label>
+        <div class="profile-info">
+            <h1 id="profileName">Загрузка...</h1>
+            <p id="userEmail"></p>
+            <p id="profileDetails" style="color:#8c8c9c;font-size:13px;margin-top:2px;"></p>
+            <span class="badge badge-submitted" id="userRole" style="margin-top:4px;"></span>
+        </div>
+    </div>
+    <div class="tabs">
+        <div class="tab">
+            <div class="tab-header" data-tab="profile">👤 Профиль</div>
+            <div class="tab-body">
+                <input type="text" id="firstName" class="form-input" placeholder="Имя" style="margin-bottom:6px;">
+                <input type="text" id="lastName" class="form-input" placeholder="Фамилия" style="margin-bottom:6px;">
+                <input type="text" id="university" class="form-input" placeholder="Университет" readonly style="margin-bottom:6px;opacity:0.5;background:#1a1a23;cursor:not-allowed;">
+                <input type="text" id="major" class="form-input" placeholder="Специальность" readonly style="margin-bottom:6px;opacity:0.5;background:#1a1a23;cursor:not-allowed;">
+                <input type="text" id="profileGroupName" class="form-input" placeholder="Группа" readonly style="margin-bottom:10px;opacity:0.5;background:#1a1a23;cursor:not-allowed;">
+                <button class="btn btn-primary btn-sm" onclick="saveProfile()">Сохранить</button>
+                <p id="saveMsg" style="color:#4a8c5c;font-size:12px;margin-top:6px;display:none;">Данные успешно сохранены!</p>
+            </div>
+        </div>
+        <div class="tab" id="subjectsTab">
+            <div class="tab-header" data-tab="subjects">📖 Предметы</div>
+            <div class="tab-body"><div id="subjectsGrid"></div></div>
+        </div>
+        <div class="tab" id="adminTab" style="display:none;">
+            <div class="tab-header" data-tab="admin">⚙️ Админ-панель</div>
+            <div class="tab-body"><div id="adminPanel"></div></div>
+        </div>
+        <div class="tab" id="statsTab" style="display:none;">
+            <div class="tab-header" data-tab="stats">📊 Статистика</div>
+            <div class="tab-body"><div id="statsGrid"></div></div>
+        </div>
+    </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

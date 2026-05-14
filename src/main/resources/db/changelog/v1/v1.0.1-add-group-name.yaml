@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-group-name-to-student-profiles
+      author: forge_dev
+      changes:
+        - addColumn:
+            tableName: student_profiles
+            columns:
+              - column:
+                  name: group_name
+                  type: VARCHAR(100)

@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2-create-submissions-table
+      author: forge_dev
+      changes:
+        - createTable:
+            tableName: submissions
+            columns:
+              - column: { name: id, type: UUID, constraints: { primaryKey: true, nullable: false } }
+              - column: { name: assignment_id, type: UUID, constraints: { nullable: false } }
+              - column: { name: user_id, type: UUID, constraints: { nullable: false } }
+              - column: { name: file_path, type: VARCHAR(500) }
+              - column: { name: status, type: VARCHAR(20), constraints: { nullable: false } }
+              - column: { name: submitted_at, type: TIMESTAMP WITH TIME ZONE }
+              - column: { name: created_at, type: TIMESTAMP WITH TIME ZONE, defaultValueComputed: "CURRENT_TIMESTAMP" }
+              - column: { name: updated_at, type: TIMESTAMP WITH TIME ZONE, defaultValueComputed: "CURRENT_TIMESTAMP" }
+        - addForeignKeyConstraint:
+            constraintName: fk_submission_assignment
+            baseTableName: submissions
+            baseColumnNames: assignment_id
+            referencedTableName: assignments
+            referencedColumnNames: id
+            onDelete: CASCADE
+        - addForeignKeyConstraint:
+            constraintName: fk_submission_user
+            baseTableName: submissions
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            onDelete: CASCADE
+        - addUniqueConstraint:
+            tableName: submissions
+            columnNames: assignment_id, user_id
+            constraintName: uk_assignment_user

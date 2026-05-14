@@ -1,0 +1,630 @@
+databaseChangeLog:
+  - changeSet:
+      id: seed-users
+      author: forge_dev
+      context: seed
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "f47ac10b-58cc-4372-a567-0e02b2c3d479" }
+              - column: { name: email, value: "admin@gmail.com" }
+              - column: { name: password_hash, value: "$2a$10$bQpX9yKZRZ9Lq5Kryrrfr.X.Y2AFpheS27Hb4yjgtEKRsEvooEOwe" }
+              - column: { name: first_name, value: "Виталий" }
+              - column: { name: last_name, value: "Пашичев" }
+              - column: { name: role, value: "ADMIN" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "7c9e6679-7425-40de-944b-e07fc1f90ae7" }
+              - column: { name: email, value: "danila.koenen@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Данила" }
+              - column: { name: last_name, value: "Коенен" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "a8b9c0d1-e2f3-4a5b-6c7d-8e9f0a1b2c3d" }
+              - column: { name: email, value: "abu.agaverdiev@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Абубакар" }
+              - column: { name: last_name, value: "Агавердиев" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e" }
+              - column: { name: email, value: "alex.kozlov@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Козлов" }
+              - column: { name: last_name, value: "Александр" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "c0d1e2f3-a4b5-4c6d-7e8f-9a0b1c2d3e4f" }
+              - column: { name: email, value: "nikita.migachev@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Мигачев" }
+              - column: { name: last_name, value: "Никита" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a" }
+              - column: { name: email, value: "denis.tarasov@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Тарасов" }
+              - column: { name: last_name, value: "Денис" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b" }
+              - column: { name: email, value: "ivan.maslov@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Маслов" }
+              - column: { name: last_name, value: "Иван" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c" }
+              - column: { name: email, value: "pavel.novikov@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Павел" }
+              - column: { name: last_name, value: "Новиков" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d" }
+              - column: { name: email, value: "ionov.dima@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Ионов" }
+              - column: { name: last_name, value: "Дмитрий" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "b5c6d7e8-f9a0-4b1c-2d3e-4f5a6b7c8d9e" }
+              - column: { name: email, value: "sergey.vasiliev@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Сергей" }
+              - column: { name: last_name, value: "Васильев" }
+              - column: { name: role, value: "USER" }
+
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, value: "c6d7e8f9-a0b1-4c2d-3e4f-5a6b7c8d9e0f" }
+              - column: { name: email, value: "yulia.andreeva@mail.ru" }
+              - column: { name: password_hash, value: "$2a$10$grM8mp5rdgMjir8dcWUiFuFMe.Xbekc5mgs1WyKMdC3WcLCgODYKS" }
+              - column: { name: first_name, value: "Юлия" }
+              - column: { name: last_name, value: "Андреева" }
+              - column: { name: role, value: "USER" }
+
+  - changeSet:
+      id: seed-student-profiles
+      author: forge_dev
+      context: seed
+      changes:
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "7c9e6679-7425-40de-944b-e07fc1f90ae7" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "a8b9c0d1-e2f3-4a5b-6c7d-8e9f0a1b2c3d" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "c0d1e2f3-a4b5-4c6d-7e8f-9a0b1c2d3e4f" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "b5c6d7e8-f9a0-4b1c-2d3e-4f5a6b7c8d9e" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+        - insert:
+            tableName: student_profiles
+            columns:
+              - column: { name: user_id, value: "c6d7e8f9-a0b1-4c2d-3e4f-5a6b7c8d9e0f" }
+              - column: { name: university, value: "ЯГТУ" }
+              - column: { name: major, value: "09.03.02" }
+
+  - changeSet:
+      id: seed-academic-period
+      author: forge_dev
+      context: seed
+      changes:
+        - insert:
+            tableName: academic_periods
+            columns:
+              - column: { name: id, value: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" }
+              - column: { name: name, value: "Весенний семестр 2026" }
+              - column: { name: start_date, value: "2026-02-09" }
+              - column: { name: end_date, value: "2026-06-20" }
+              - column: { name: active, value: "true" }
+
+  - changeSet:
+      id: seed-groups
+      author: forge_dev
+      context: seed
+      changes:
+        - insert:
+            tableName: groups
+            columns:
+              - column: { name: id, value: "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed" }
+              - column: { name: name, value: "ЦИСБ-24" }
+              - column: { name: description, value: "Информационная безопасность, 4 курс" }
+              - column: { name: period_id, value: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" }
+
+        - insert:
+            tableName: groups
+            columns:
+              - column: { name: id, value: "6ba7b810-9dad-11d1-80b4-00c04fd430c8" }
+              - column: { name: name, value: "ЦИС-23" }
+              - column: { name: description, value: "Информационные системы, 3 курс" }
+              - column: { name: period_id, value: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" }
+
+        - insert:
+            tableName: groups
+            columns:
+              - column: { name: id, value: "d9c8b7a6-5f4e-3d2c-1b0a-9e8f7d6c5b4a" }
+              - column: { name: name, value: "ЦСИИ-25" }
+              - column: { name: description, value: "Цифровые системы и искусственный интеллект, 2 курс" }
+              - column: { name: period_id, value: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d" }
+
+  - changeSet:
+      id: seed-subjects
+      author: forge_dev
+      context: seed
+      changes:
+        - insert:
+            tableName: subjects
+            columns:
+              - column: { name: id, value: "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" }
+              - column: { name: name, value: "Безопасность баз данных" }
+              - column: { name: teacher_name, value: "Шулева Ю.Н." }
+              - column: { name: weight_coefficient, value: "0.50" }
+              - column: { name: total_hours, value: "108" }
+              - column: { name: group_id, value: "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed" }
+
+        - insert:
+            tableName: subjects
+            columns:
+              - column: { name: id, value: "e5f6a7b8-c9d4-4e1f-2a3b-4c5d6e7f8a9b" }
+              - column: { name: name, value: "Web-технологии" }
+              - column: { name: teacher_name, value: "Бахаева Д.Д." }
+              - column: { name: weight_coefficient, value: "0.50" }
+              - column: { name: total_hours, value: "120" }
+              - column: { name: group_id, value: "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed" }
+
+        - insert:
+            tableName: subjects
+            columns:
+              - column: { name: id, value: "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c" }
+              - column: { name: name, value: "Программирование Java" }
+              - column: { name: teacher_name, value: "Пашичев В.С." }
+              - column: { name: weight_coefficient, value: "0.50" }
+              - column: { name: total_hours, value: "144" }
+              - column: { name: group_id, value: "6ba7b810-9dad-11d1-80b4-00c04fd430c8" }
+
+        - insert:
+            tableName: subjects
+            columns:
+              - column: { name: id, value: "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d" }
+              - column: { name: name, value: "Инфокоммуникационные сети" }
+              - column: { name: teacher_name, value: "Вологин А.Н." }
+              - column: { name: weight_coefficient, value: "0.50" }
+              - column: { name: total_hours, value: "108" }
+              - column: { name: group_id, value: "6ba7b810-9dad-11d1-80b4-00c04fd430c8" }
+
+        - insert:
+            tableName: subjects
+            columns:
+              - column: { name: id, value: "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e" }
+              - column: { name: name, value: "Теория вероятностей" }
+              - column: { name: teacher_name, value: "Королев Л.В." }
+              - column: { name: weight_coefficient, value: "0.50" }
+              - column: { name: total_hours, value: "96" }
+              - column: { name: group_id, value: "d9c8b7a6-5f4e-3d2c-1b0a-9e8f7d6c5b4a" }
+
+        - insert:
+            tableName: subjects
+            columns:
+              - column: { name: id, value: "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f" }
+              - column: { name: name, value: "Методологии информационных систем" }
+              - column: { name: teacher_name, value: "Близнюк О.Н." }
+              - column: { name: weight_coefficient, value: "0.50" }
+              - column: { name: total_hours, value: "84" }
+              - column: { name: group_id, value: "d9c8b7a6-5f4e-3d2c-1b0a-9e8f7d6c5b4a" }
+
+  - changeSet:
+      id: seed-assignments
+      author: forge_dev
+      context: seed
+      changes:
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a" }
+              - column: { name: title, value: "ЛБ1: SQL инъекции" }
+              - column: { name: description, value: "Изучение уязвимостей SQL инъекций и методов защиты" }
+              - column: { name: due_date, value: "2026-03-01T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.15" }
+              - column: { name: subject_id, value: "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b" }
+              - column: { name: title, value: "ЛБ2: NoSQL инъекции" }
+              - column: { name: description, value: "Анализ уязвимостей NoSQL баз данных" }
+              - column: { name: due_date, value: "2026-03-22T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.15" }
+              - column: { name: subject_id, value: "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c" }
+              - column: { name: title, value: "ЛБ3: Шифрование данных" }
+              - column: { name: description, value: "Реализация шифрования на уровне БД" }
+              - column: { name: due_date, value: "2026-04-12T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.15" }
+              - column: { name: subject_id, value: "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d" }
+              - column: { name: title, value: "ЛБ4: Аудит безопасности" }
+              - column: { name: description, value: "Разработка системы аудита БД" }
+              - column: { name: due_date, value: "2026-05-03T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.15" }
+              - column: { name: subject_id, value: "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e" }
+              - column: { name: title, value: "Тест: Основы безопасности БД" }
+              - column: { name: description, value: "Промежуточное тестирование" }
+              - column: { name: due_date, value: "2026-04-20T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "HOMEWORK" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f" }
+              - column: { name: title, value: "Экзамен" }
+              - column: { name: description, value: "Итоговый экзамен по безопасности БД" }
+              - column: { name: due_date, value: "2026-06-10T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "EXAM" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "d6e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a" }
+              - column: { name: title, value: "ЛБ1: HTML/CSS верстка" }
+              - column: { name: description, value: "Создание адаптивного веб-интерфейса" }
+              - column: { name: due_date, value: "2026-02-28T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "e5f6a7b8-c9d4-4e1f-2a3b-4c5d6e7f8a9b" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "e7f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b" }
+              - column: { name: title, value: "ЛБ2: JavaScript и DOM" }
+              - column: { name: description, value: "Динамическое взаимодействие с DOM" }
+              - column: { name: due_date, value: "2026-03-20T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "e5f6a7b8-c9d4-4e1f-2a3b-4c5d6e7f8a9b" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "f8a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c" }
+              - column: { name: title, value: "ЛБ3: React приложение" }
+              - column: { name: description, value: "Разработка SPA на React" }
+              - column: { name: due_date, value: "2026-04-25T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.25" }
+              - column: { name: subject_id, value: "e5f6a7b8-c9d4-4e1f-2a3b-4c5d6e7f8a9b" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d" }
+              - column: { name: title, value: "Тест: Фронтенд разработка" }
+              - column: { name: description, value: "Промежуточное тестирование" }
+              - column: { name: due_date, value: "2026-05-15T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "HOMEWORK" }
+              - column: { name: weight, value: "0.15" }
+              - column: { name: subject_id, value: "e5f6a7b8-c9d4-4e1f-2a3b-4c5d6e7f8a9b" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e" }
+              - column: { name: title, value: "Экзамен" }
+              - column: { name: description, value: "Итоговый экзамен по Web-технологиям" }
+              - column: { name: due_date, value: "2026-06-15T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "EXAM" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "e5f6a7b8-c9d4-4e1f-2a3b-4c5d6e7f8a9b" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f" }
+              - column: { name: title, value: "ЛБ1: Основы Java синтаксиса" }
+              - column: { name: description, value: "Переменные, циклы, условия" }
+              - column: { name: due_date, value: "2026-03-05T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.15" }
+              - column: { name: subject_id, value: "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a" }
+              - column: { name: title, value: "ЛБ2: ООП в Java" }
+              - column: { name: description, value: "Классы, объекты, наследование" }
+              - column: { name: due_date, value: "2026-03-28T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.15" }
+              - column: { name: subject_id, value: "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b" }
+              - column: { name: title, value: "ЛБ3: Коллекции и Stream API" }
+              - column: { name: description, value: "Работа с коллекциями" }
+              - column: { name: due_date, value: "2026-04-18T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.15" }
+              - column: { name: subject_id, value: "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c" }
+              - column: { name: title, value: "Курсовая работа" }
+              - column: { name: description, value: "Desktop приложение на Java" }
+              - column: { name: due_date, value: "2026-05-30T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "PROJECT" }
+              - column: { name: weight, value: "0.35" }
+              - column: { name: subject_id, value: "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "a5b6c7d8-e9f0-4a1b-2c3d-4e5f6a7b8c9d" }
+              - column: { name: title, value: "Экзамен" }
+              - column: { name: description, value: "Итоговый экзамен по Java" }
+              - column: { name: due_date, value: "2026-06-18T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "EXAM" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e" }
+              - column: { name: title, value: "ЛБ1: Модель OSI" }
+              - column: { name: description, value: "Анализ уровней модели OSI" }
+              - column: { name: due_date, value: "2026-03-10T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1f" }
+              - column: { name: title, value: "ЛБ2: Протоколы TCP/IP" }
+              - column: { name: description, value: "Настройка и анализ сетей" }
+              - column: { name: due_date, value: "2026-04-05T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.25" }
+              - column: { name: subject_id, value: "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "d8e9f0a1-b2c3-4d4e-5f6a-7b8c9d0e1f2a" }
+              - column: { name: title, value: "Тест: Сетевые технологии" }
+              - column: { name: description, value: "Промежуточное тестирование" }
+              - column: { name: due_date, value: "2026-05-10T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "HOMEWORK" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "e9f0a1b2-c3d4-4e5f-6a7b-8c9d0e1f2a3b" }
+              - column: { name: title, value: "Экзамен" }
+              - column: { name: description, value: "Итоговый экзамен по сетям" }
+              - column: { name: due_date, value: "2026-06-12T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "EXAM" }
+              - column: { name: weight, value: "0.35" }
+              - column: { name: subject_id, value: "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "f0a1b2c3-d4e5-4f6a-7b8c-9d0e1f2a3b4c" }
+              - column: { name: title, value: "РГР1: Случайные величины" }
+              - column: { name: description, value: "Расчетная работа" }
+              - column: { name: due_date, value: "2026-03-15T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "HOMEWORK" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" }
+              - column: { name: title, value: "РГР2: Законы распределения" }
+              - column: { name: description, value: "Расчетная работа" }
+              - column: { name: due_date, value: "2026-04-20T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "HOMEWORK" }
+              - column: { name: weight, value: "0.25" }
+              - column: { name: subject_id, value: "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e" }
+              - column: { name: title, value: "Тест: Теория вероятностей" }
+              - column: { name: description, value: "Промежуточное тестирование" }
+              - column: { name: due_date, value: "2026-05-18T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "HOMEWORK" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" }
+              - column: { name: title, value: "Экзамен" }
+              - column: { name: description, value: "Итоговый экзамен по терверу" }
+              - column: { name: due_date, value: "2026-06-08T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "EXAM" }
+              - column: { name: weight, value: "0.35" }
+              - column: { name: subject_id, value: "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a" }
+              - column: { name: title, value: "ЛБ1: Жизненный цикл ПО" }
+              - column: { name: description, value: "Анализ методологий разработки" }
+              - column: { name: due_date, value: "2026-03-25T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.20" }
+              - column: { name: subject_id, value: "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "e5f6a7b8-c9d4-4e1f-2a3b-4c5d6e7f8a9b" }
+              - column: { name: title, value: "ЛБ2: Agile и Scrum" }
+              - column: { name: description, value: "Внедрение гибких методологий" }
+              - column: { name: due_date, value: "2026-04-22T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "LAB" }
+              - column: { name: weight, value: "0.25" }
+              - column: { name: subject_id, value: "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c" }
+              - column: { name: title, value: "Курсовая работа" }
+              - column: { name: description, value: "Разработка методологии для проекта" }
+              - column: { name: due_date, value: "2026-05-25T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "PROJECT" }
+              - column: { name: weight, value: "0.30" }
+              - column: { name: subject_id, value: "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f" }
+
+        - insert:
+            tableName: assignments
+            columns:
+              - column: { name: id, value: "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d" }
+              - column: { name: title, value: "Экзамен" }
+              - column: { name: description, value: "Итоговый экзамен по методологиям" }
+              - column: { name: due_date, value: "2026-06-20T23:59:00" }
+              - column: { name: status, value: "PENDING" }
+              - column: { name: type, value: "EXAM" }
+              - column: { name: weight, value: "0.25" }
+              - column: { name: subject_id, value: "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f" }

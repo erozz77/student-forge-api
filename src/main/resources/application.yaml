@@ -1,0 +1,55 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: student-forge
+  datasource:
+    url: jdbc:postgresql://localhost:5432/studentforge
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+
+application:
+  security:
+    jwt:
+      secret-key: dGhpc0lzQVZlcnlMb25nQW5kU2VjdXJlU2VjcmV0S2V5Rm9yU3R1ZGVudEZvcmdlQXBw
+      access-token-expiration: 3600000
+      refresh-token-expiration: 604800000
+
+logging:
+  level:
+    root: INFO
+    com.studentforge: DEBUG
+    org.springframework.web: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
